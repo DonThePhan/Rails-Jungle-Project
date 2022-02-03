@@ -2,6 +2,10 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    line_items = LineItem.where(order_id:params[:id])
+    @product_details = line_items.map do |line_item|
+      correct_qty_to_product_details line_item
+    end
   end
 
   def create
@@ -20,6 +24,12 @@ class OrdersController < ApplicationController
   end
 
   private
+
+  def correct_qty_to_product_details(line_item)
+    product = Product.find(line_item[:product_id])
+    product.quantity = line_item.quantity
+    return product
+  end
 
   def empty_cart!
     # empty hash means no products in cart :)
