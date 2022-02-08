@@ -10,6 +10,7 @@ class UsersController < ApplicationController
       puts "","ALSO LOGGED IN!!!!",""
       redirect_to '/'
     else
+      puts "","SIGNUP FAILED :(",""
       redirect_to '/signup'
     end
   end
@@ -17,9 +18,6 @@ class UsersController < ApplicationController
   private 
 
   def user_params
-    # puts 'here'
-    # p params
-    # puts 'after here'
     params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
   end
 end
