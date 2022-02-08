@@ -20,12 +20,10 @@ RSpec.feature "Visitor Navigates to product details", type: :feature, js: true d
   scenario "Navigate to an individual product" do
     # ACT
     visit root_path
-    p page.find('img.main-img')
     page.first(:link, 'Details').click
     
     # DEBUG / VERIFY
     expect(page).to have_css 'section.products-show'
-    p page.find('img.main-img')
     save_screenshot
   end
 end
