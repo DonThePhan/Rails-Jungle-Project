@@ -1,6 +1,10 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+A mini e-commerce application built with Rails 4.2.
+
+## Demo
+https://user-images.githubusercontent.com/74743983/157529094-557e615a-ae85-48d2-971e-ccdc38457a59.mp4
+
 
 ## Additional Steps for Apple M1 Machines
 
